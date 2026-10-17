@@ -9,6 +9,8 @@ namespace Entities
         [StringLength(40)]
         public string CountryName { get; set; }
 
+        public virtual List<Person>? people { get; set; }
+
         public override bool Equals(object? obj)
         {
             if (obj == null || obj.GetType() != typeof(Country))

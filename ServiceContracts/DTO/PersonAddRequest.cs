@@ -19,7 +19,9 @@ namespace ServiceContracts.DTO
 
         public Person ToPerson()
         {
-            return new Person {  PersonName = PersonName, Email = Email, DateOfBirth = DateOfBirth ,Gender =  Gender.ToString()};
+            return new Person {  PersonName = PersonName, Email = Email, DateOfBirth = DateOfBirth ,Gender =  Gender.ToString(),
+                CountryID = CountryID
+            };
         }
     }
 }

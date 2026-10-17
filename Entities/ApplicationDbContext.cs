@@ -56,5 +56,9 @@ namespace Entities
 
             }
         }
+        public virtual List<Person> sp_GetAllPersons()
+        {
+            return Persons.FromSqlRaw("EXEC dbo.GetAllPersons").ToList();
+        }
     }
 }

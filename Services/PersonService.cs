@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Microsoft.EntityFrameworkCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enum;
@@ -6,14 +7,21 @@ using Services.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using CsvHelper;
+using System.Globalization;
 namespace Services
 {
     public class PersonService : IPersonService
     {
-        private readonly List<Person> people =  new List<Person>();
 
-        public PersonResponse AddPerson(PersonAddRequest personAddRequest)
+
+        private readonly ApplicationDbContext _db;
+        public PersonService(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+
+        public async Task<PersonResponse> AddPerson(PersonAddRequest personAddRequest)
         {
             if (personAddRequest == null)
             {
@@ -24,43 +32,50 @@ namespace Services
 
             Person person = personAddRequest.ToPerson();
             person.PersonID = Guid.NewGuid();
-
-            if (people.Where(item=> item.PersonID == person.PersonID).Count()>0)
+            
+            if (_db.Persons.Where(item=> item.PersonID == person.PersonID).Count()>0)
             {
                 throw new ArgumentException();
             }
-            people.Add(person);
+            _db.Persons.Add(person);
+            await _db.SaveChangesAsync();
             return person.ToPersonResponse();
         }
 
-        public bool DeletePerson(Guid personID)
+        public async Task<bool> DeletePerson(Guid personID)
         {
             if (personID == Guid.Empty)
             {
                 throw new ArgumentNullException();
             }
-
-            people.RemoveAll(item=>item.PersonID == personID);
-
-            return people.Where(item=>item.PersonID == personID).Count()>0?false:true;
+            Person? person_delete = await _db.Persons.FirstOrDefaultAsync(item=>item.PersonID == personID);
+            if (person_delete == null)
+            {
+                return false;
+            }
+            _db.Persons.Remove(person_delete);
+            await _db.SaveChangesAsync();
+            return true;
         }
 
-        public List<PersonResponse> GetAllPerson()
+        public async Task<List<PersonResponse>> GetAllPerson()
         {
-            List<PersonResponse> personResponses = new List<PersonResponse>();
-            foreach (var item in people)
-            {
-                personResponses.Add(item.ToPersonResponse());
-            }
+            
+            
+            List<Person> people = await _db.Persons.Include("Country").ToListAsync() ;
+
+            List<PersonResponse> personResponses = _db.sp_GetAllPersons().Select
+                (item => item.ToPersonResponse()).ToList();
+
 
             return personResponses;
         }
 
-        public List<PersonResponse> GetFilteredPersons(string searchBy, string? searchString)
+        public async Task<List<PersonResponse>> GetFilteredPersons(string searchBy, string? searchString)
         {
 
             // 1. 获取所有人员作为基准数据源
-            List<PersonResponse> allPersons = GetAllPerson();
+            List<PersonResponse> allPersons = await GetAllPerson();
             List<PersonResponse> matchingPersons = allPersons;
 
             if (string.IsNullOrEmpty(searchBy) || string.IsNullOrEmpty(searchString))
@@ -96,18 +111,34 @@ namespace Services
             return matchingPersons;
         }
 
-        public PersonResponse GetPersonByID(Guid personID)
+        public async Task<PersonResponse> GetPersonByID(Guid personID)
         {
             //throw new NotImplementedException();
             if (personID == Guid.Empty)
             {
                 return null;
             }
-            Person personByID = people.FirstOrDefault(item => item.PersonID == personID);
+            Person? personByID = await _db.Persons.FirstOrDefaultAsync(item => item.PersonID == personID);
             return personByID.ToPersonResponse();
         }
 
-        public List<PersonResponse> GetPersonsByOrder(List<PersonResponse> people, string? orderBy, OrderOptions order)
+        public async Task<MemoryStream> GetPersonCSVFile()
+        {
+            List<PersonResponse> persons = await GetAllPerson();
+
+
+            var resultMemory = new MemoryStream();
+            var streamWriter = new StreamWriter(resultMemory);
+            CsvWriter csv = new CsvWriter
+                (streamWriter, CultureInfo.InvariantCulture, leaveOpen: true);
+            await csv.WriteRecordsAsync(persons);
+
+            resultMemory.Position = 0;
+            return resultMemory;
+
+        }
+
+        public async Task<List<PersonResponse>> GetPersonsByOrder(List<PersonResponse> people, string? orderBy, OrderOptions order)
         {
             if (string.IsNullOrEmpty(orderBy))
             {
@@ -125,7 +156,7 @@ namespace Services
             return personResponsesFromSort;
         }
 
-        public PersonResponse UpdatePerson(PersonUpdateRequest personUpdateRequest)
+        public async Task<PersonResponse> UpdatePerson(PersonUpdateRequest personUpdateRequest)
         {
             if (personUpdateRequest == null)
             {
@@ -133,7 +164,8 @@ namespace Services
             }
             ValidationHelper.ModelValidation(personUpdateRequest);
 
-            Person? matchingPerson = people.FirstOrDefault(item=>item.PersonID == personUpdateRequest.PersonId);
+            Person? matchingPerson = await _db.Persons.FirstOrDefaultAsync(item=>item.PersonID == personUpdateRequest.PersonId);
+
             if (matchingPerson == null)
             {
                 throw new ArgumentException();
@@ -144,6 +176,7 @@ namespace Services
             matchingPerson.Gender = personUpdateRequest.Gender.ToString(); // 枚举转字符串
             matchingPerson.CountryID = personUpdateRequest.CountryID;
             matchingPerson.Address = personUpdateRequest.Address;
+            await _db.SaveChangesAsync();
 
             return matchingPerson.ToPersonResponse();
         }

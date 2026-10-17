@@ -101,6 +101,8 @@ namespace Entities.Migrations
 
                     b.HasKey("PersonID");
 
+                    b.HasIndex("CountryID");
+
                     b.ToTable("Persons", (string)null);
 
                     b.HasData(
@@ -236,6 +238,20 @@ namespace Entities.Migrations
                             PersonName = "Verene",
                             ReceiveNewsLetters = true
                         });
+                });
+
+            modelBuilder.Entity("Entities.Person", b =>
+                {
+                    b.HasOne("Entities.Country", "Country")
+                        .WithMany("people")
+                        .HasForeignKey("CountryID");
+
+                    b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("Entities.Country", b =>
+                {
+                    b.Navigation("people");
                 });
 #pragma warning restore 612, 618
         }

@@ -72,6 +72,7 @@ namespace ServiceContracts.DTO
                     DateTime.Today.Year - person.DateOfBirth.Value.Year -
                     (DateTime.Today.DayOfYear < person.DateOfBirth.Value.DayOfYear ? 1 : 0) : null,
                     Gender = person.Gender,
+                    CountryName = person.Country?.CountryName
                 };
             }
         }

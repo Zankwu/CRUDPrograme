@@ -30,6 +30,8 @@ namespace Entities
         public bool ReceiveNewsLetters { get; set; }
         public int? Age { get; set; }
 
+        public virtual Country? Country { get; set; }
+
     }
 
 
