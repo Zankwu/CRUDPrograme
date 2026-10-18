@@ -1,7 +1,10 @@
 ﻿using Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
 using ServiceContracts;
 using ServiceContracts.DTO;
+using System.ComponentModel;
 
 namespace Services
 {
@@ -56,6 +59,38 @@ namespace Services
             Country countryBySelect = await _db.Countries.Where(item => item.CountryId == guid).FirstAsync();
             CountryResponse countryResponseBySelect = countryBySelect.ToCountryResponse();
             return countryResponseBySelect;
+        }
+
+        public async Task<int> UploadCountryByExecl(IFormFile formFile)
+        {
+            int sum = 0;
+            if (formFile == null || formFile.Length == 0)
+                return -1;
+
+            MemoryStream memoryStream = new MemoryStream();
+            await formFile.CopyToAsync(memoryStream);
+            memoryStream.Position = 0;
+            using (ExcelPackage excelPackage = new ExcelPackage(memoryStream))
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets[0];
+                int rows = worksheet.Dimension.Rows;
+                for (int row = 1; row <= rows; row++)
+                {
+                    string? countryName = Convert.ToString(worksheet.Cells[row, 1].Value);
+                    if (!string.IsNullOrEmpty(countryName) && _db.Countries.Where(item=>item.CountryName == countryName).Count()==0)
+                    {
+                        CountryAddRequest countryAddRequest = new CountryAddRequest()
+                        {
+                            CountryName = countryName,
+                        };
+                        _db.Countries.Add(countryAddRequest.ToCountry());
+                        sum++;
+                    }
+                }
+            }
+            _db.SaveChanges();
+
+            return sum;
         }
     }
 }
