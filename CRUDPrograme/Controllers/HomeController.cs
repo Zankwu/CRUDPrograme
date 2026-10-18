@@ -10,11 +10,19 @@ namespace CRUDPrograme.Controllers
         {
             _personService = personService;
         }
-        [Route("/")]
+        //[Route("/")]
+        //public async Task<IActionResult> Index()
+        //{
+        //    MemoryStream memoryStream = await _personService.GetPersonCsvCustomer();
+        //    return File(memoryStream, "text/csv", "persons.csv");
+        //}
+
+        [Route("/csv")]
         public async Task<IActionResult> Index()
         {
-            MemoryStream memoryStream = await _personService.GetPersonCSVFile();
-            return File(memoryStream, "text/csv", "persons.csv");
+            MemoryStream memoryStream = await _personService.GetPersonExcel();
+            return File(memoryStream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "persons.xlsx");
         }
     }
 }
