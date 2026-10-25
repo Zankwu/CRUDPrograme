@@ -62,5 +62,20 @@ namespace CRUDPrograme.Controllers
             }
             return Content(peopleAllName);
         }
+
+
+        [Route("/date")]
+        [TypeFilter(typeof(FeatureDisabledResourceFilter),Arguments = new Object[] {false })]
+        public async Task<IActionResult> GetDate()
+        {
+
+            var people = await _personService.GetAllPerson();
+            string peopleAllName = "";
+            foreach (var item in people)
+            {
+                peopleAllName += item.CountryName;
+            }
+            return Content(peopleAllName);
+        }
     }
 }
