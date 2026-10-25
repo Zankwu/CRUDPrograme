@@ -1,0 +1,210 @@
+2026-10-24 18:09:30.956 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-24 18:09:30.962 +08:00 [INF] Hosting environment: Development
+2026-10-24 18:09:30.963 +08:00 [INF] Content root path: E:\Work Place\ConfigurationEg\CRUDPrograme\CRUDPrograme
+2026-10-24 18:13:23.775 +08:00 [INF] User profile is available. Using 'C:\Users\zank\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-24 18:13:23.933 +08:00 [INF] Now listening on: http://localhost:4396
+2026-10-24 18:13:23.962 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-24 18:13:23.963 +08:00 [INF] Hosting environment: Development
+2026-10-24 18:13:23.963 +08:00 [INF] Content root path: E:\Work Place\ConfigurationEg\CRUDPrograme\CRUDPrograme
+2026-10-24 18:13:24.484 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-24 18:13:24.517 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-24 18:13:24.534 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 18:13:24.567 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-24 18:13:24.677 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-24 18:13:24.678 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuting method
+2026-10-24 18:13:24.680 +08:00 [INF] [PersonService]method in GetAllPerson
+2026-10-24 18:13:24.682 +08:00 [INF] [PersonRepository]method in repository
+2026-10-24 18:13:25.829 +08:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[Age], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [c].[CountryId], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryId]
+2026-10-24 18:13:25.921 +08:00 [INF] Time for GetAllPersons from Database completed in 1239.2 ms
+2026-10-24 18:13:25.930 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuted method
+2026-10-24 18:13:25.932 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-24 18:13:25.936 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2026-10-24 18:13:25.950 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 1377.9997ms
+2026-10-24 18:13:25.952 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 18:13:25.955 +08:00 [INF] HTTP GET / responded 200 in 1433.5938 ms
+2026-10-24 18:13:25.958 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 24 Oct 2026 10:13:25 GMT
+Server: Kestrel
+Content-Length: 76
+X-Custom-Key: [Redacted]
+2026-10-24 18:13:25.971 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 200 76 text/plain; charset=utf-8 1492.3636ms
+2026-10-24 18:13:27.512 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-10-24 18:13:27.515 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /.well-known/appspecific/com.chrome.devtools.json
+2026-10-24 18:13:27.519 +08:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 3.3967 ms
+2026-10-24 18:13:27.521 +08:00 [INF] Response:
+StatusCode: 404
+2026-10-24 18:13:27.522 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 10.8364ms
+2026-10-24 18:13:27.525 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-10-24 18:13:31.913 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-10-24 18:13:31.916 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /.well-known/appspecific/com.chrome.devtools.json
+2026-10-24 18:13:31.918 +08:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.6711 ms
+2026-10-24 18:13:31.919 +08:00 [INF] Response:
+StatusCode: 404
+2026-10-24 18:13:31.920 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 6.217ms
+2026-10-24 18:13:31.922 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-10-24 18:13:32.637 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-24 18:13:32.640 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-24 18:13:32.641 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 18:13:32.642 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-24 18:13:32.645 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-24 18:13:32.646 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuting method
+2026-10-24 18:13:32.647 +08:00 [INF] [PersonService]method in GetAllPerson
+2026-10-24 18:13:32.648 +08:00 [INF] [PersonRepository]method in repository
+2026-10-24 18:13:32.658 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[Age], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [c].[CountryId], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryId]
+2026-10-24 18:13:32.661 +08:00 [INF] Time for GetAllPersons from Database completed in 13.0 ms
+2026-10-24 18:13:32.662 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuted method
+2026-10-24 18:13:32.662 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-24 18:13:32.663 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2026-10-24 18:13:32.664 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 21.3135ms
+2026-10-24 18:13:32.665 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 18:13:32.666 +08:00 [INF] HTTP GET / responded 200 in 25.5024 ms
+2026-10-24 18:13:32.667 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 24 Oct 2026 10:13:31 GMT
+Server: Kestrel
+Content-Length: 76
+X-Custom-Key: [Redacted]
+2026-10-24 18:13:32.668 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 200 76 text/plain; charset=utf-8 30.9365ms
+2026-10-24 18:13:32.697 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-10-24 18:13:32.699 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /.well-known/appspecific/com.chrome.devtools.json
+2026-10-24 18:13:32.700 +08:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.2305 ms
+2026-10-24 18:13:32.702 +08:00 [INF] Response:
+StatusCode: 404
+2026-10-24 18:13:32.703 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 6.6133ms
+2026-10-24 18:13:32.706 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-10-24 18:14:59.725 +08:00 [INF] User profile is available. Using 'C:\Users\zank\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-24 18:14:59.846 +08:00 [INF] Now listening on: http://localhost:4396
+2026-10-24 18:15:02.056 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-24 18:15:02.090 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-24 18:15:02.107 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 18:15:02.141 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-24 18:15:02.264 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuting method
+2026-10-24 18:15:02.265 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuting method
+2026-10-24 18:15:02.266 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-24 18:15:02.267 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuting method
+2026-10-24 18:15:02.269 +08:00 [INF] [PersonService]method in GetAllPerson
+2026-10-24 18:15:02.271 +08:00 [INF] [PersonRepository]method in repository
+2026-10-24 18:15:03.504 +08:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[Age], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [c].[CountryId], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryId]
+2026-10-24 18:15:03.588 +08:00 [INF] Time for GetAllPersons from Database completed in 1317.5 ms
+2026-10-24 18:15:03.594 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuted method
+2026-10-24 18:15:03.595 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-24 18:15:03.596 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuted method
+2026-10-24 18:15:03.596 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuted method
+2026-10-24 18:15:03.600 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2026-10-24 18:15:03.614 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 1468.9184ms
+2026-10-24 18:15:03.616 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 18:15:03.620 +08:00 [INF] HTTP GET / responded 200 in 1526.3542 ms
+2026-10-24 18:15:03.624 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 24 Oct 2026 10:15:02 GMT
+Server: Kestrel
+Content-Length: 76
+X-Custom-Key: [Redacted]
+X-Custom-Controller: [Redacted]
+X-From-Global: [Redacted]
+2026-10-24 18:15:03.635 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 200 76 text/plain; charset=utf-8 1583.9924ms
+2026-10-24 18:15:04.104 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-10-24 18:15:04.107 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /.well-known/appspecific/com.chrome.devtools.json
+2026-10-24 18:15:04.111 +08:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 3.0079 ms
+2026-10-24 18:15:04.113 +08:00 [INF] Response:
+StatusCode: 404
+2026-10-24 18:15:04.114 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 10.8739ms
+2026-10-24 18:15:04.117 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-10-24 18:15:04.709 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-24 18:15:04.713 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-24 18:15:04.714 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 18:15:04.715 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-24 18:15:04.718 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuting method
+2026-10-24 18:15:04.719 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuting method
+2026-10-24 18:15:04.720 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-24 18:15:04.721 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuting method
+2026-10-24 18:15:04.721 +08:00 [INF] [PersonService]method in GetAllPerson
+2026-10-24 18:15:04.722 +08:00 [INF] [PersonRepository]method in repository
+2026-10-24 18:15:04.762 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[Age], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [c].[CountryId], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryId]
+2026-10-24 18:15:04.765 +08:00 [INF] Time for GetAllPersons from Database completed in 42.6 ms
+2026-10-24 18:15:04.766 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuted method
+2026-10-24 18:15:04.767 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-24 18:15:04.767 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuted method
+2026-10-24 18:15:04.768 +08:00 [INF] ResponseHeaderActionFilter.OnActionExecuted method
+2026-10-24 18:15:04.769 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2026-10-24 18:15:04.770 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 53.8041ms
+2026-10-24 18:15:04.771 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 18:15:04.772 +08:00 [INF] HTTP GET / responded 200 in 58.3211 ms
+2026-10-24 18:15:04.773 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 24 Oct 2026 10:15:03 GMT
+Server: Kestrel
+Content-Length: 76
+X-Custom-Key: [Redacted]
+X-Custom-Controller: [Redacted]
+X-From-Global: [Redacted]
+2026-10-24 18:15:04.774 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 200 76 text/plain; charset=utf-8 65.9544ms
+2026-10-24 18:15:04.810 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-10-24 18:15:04.813 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /.well-known/appspecific/com.chrome.devtools.json
+2026-10-24 18:15:04.815 +08:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.9696 ms
+2026-10-24 18:15:04.817 +08:00 [INF] Response:
+StatusCode: 404
+2026-10-24 18:15:04.818 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 7.8289ms
+2026-10-24 18:15:04.821 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404

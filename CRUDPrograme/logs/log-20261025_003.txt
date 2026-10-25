@@ -1,0 +1,26 @@
+2026-10-25 02:24:56.169 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-25 02:24:56.174 +08:00 [INF] Hosting environment: Development
+2026-10-25 02:24:56.175 +08:00 [INF] Content root path: E:\Work Place\ConfigurationEg\CRUDPrograme\CRUDPrograme
+2026-10-25 02:25:35.168 +08:00 [INF] User profile is available. Using 'C:\Users\zank\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-25 02:25:35.291 +08:00 [INF] Now listening on: http://localhost:4396
+2026-10-25 02:25:35.884 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-25 02:25:35.914 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-25 02:25:35.931 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-25 02:25:35.962 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-25 02:25:36.071 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-25 02:25:36.073 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-25 02:25:36.074 +08:00 [INF] 1.My-Custom-Value --------------ORDER XXX
+2026-10-25 02:25:36.075 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-25 02:25:36.076 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-25 02:25:36.080 +08:00 [INF] Executing StatusCodeResult, setting HTTP status code 401
+2026-10-25 02:25:36.083 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 116.3812ms
+2026-10-25 02:25:36.084 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-25 02:25:36.087 +08:00 [INF] HTTP GET / responded 401 in 169.2899 ms
+2026-10-25 02:25:36.089 +08:00 [INF] Response:
+StatusCode: 401
+2026-10-25 02:25:36.094 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 401 null null 216.0662ms

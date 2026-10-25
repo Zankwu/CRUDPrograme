@@ -1,0 +1,49 @@
+2026-10-24 19:34:50.539 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-24 19:34:50.546 +08:00 [INF] Hosting environment: Development
+2026-10-24 19:34:50.547 +08:00 [INF] Content root path: E:\Work Place\ConfigurationEg\CRUDPrograme\CRUDPrograme
+2026-10-24 19:41:47.352 +08:00 [INF] User profile is available. Using 'C:\Users\zank\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-24 19:41:47.474 +08:00 [INF] Now listening on: http://localhost:4396
+2026-10-24 19:41:48.048 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-24 19:41:48.109 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-24 19:41:48.136 +08:00 [INF] HTTP GET / responded 404 in 21.3460 ms
+2026-10-24 19:41:48.141 +08:00 [INF] Response:
+StatusCode: 404
+2026-10-24 19:41:48.152 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 404 null null 112.6563ms
+2026-10-24 19:41:48.157 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:4396/, Response status code: 404
+2026-10-24 19:41:50.972 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/2 - null null
+2026-10-24 19:41:50.976 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /2
+2026-10-24 19:41:50.983 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 19:41:51.018 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-24 19:41:51.135 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-24 19:41:51.137 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-24 19:41:51.138 +08:00 [INF] 1.My-Custom-Value --------------ORDER XXX
+2026-10-24 19:41:51.139 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-24 19:41:51.140 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-24 19:41:51.143 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 120.3543ms
+2026-10-24 19:41:51.144 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 19:41:51.145 +08:00 [INF] HTTP GET /2 responded 200 in 167.8921 ms
+2026-10-24 19:41:51.147 +08:00 [INF] Response:
+StatusCode: 200
+2026-10-24 19:41:51.150 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/2 - 200 null null 177.8795ms
+2026-10-24 19:41:56.714 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/?Auth=2 - null null
+2026-10-24 19:41:56.717 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-24 19:41:56.718 +08:00 [INF] HTTP GET / responded 404 in 0.1028 ms
+2026-10-24 19:41:56.720 +08:00 [INF] Response:
+StatusCode: 404
+2026-10-24 19:41:56.721 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/?Auth=2 - 404 null null 7.4483ms
+2026-10-24 19:41:56.724 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:4396/, Response status code: 404

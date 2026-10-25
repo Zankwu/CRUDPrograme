@@ -8,17 +8,18 @@ namespace CRUDPrograme.Controllers
     {
 
         private readonly ICountryService _countryService;
-
-        public CountryController(ICountryService countryService)
+        private ILogger<CountryController> _logger;
+        public CountryController(ICountryService countryService, ILogger<CountryController> logger)
         {
             _countryService = countryService;
+            _logger = logger;
         }
         [HttpPost]
         [Route("/uploadFile")]
-        public async Task<IActionResult> Index([FromForm(Name = "formFile")]IFormFile formFile)
+        public async Task<IActionResult> Index([FromForm(Name = "formFile")] IFormFile formFile)
         {
             int sum = await _countryService.UploadCountryByExecl(formFile);
-            if (sum==-1)
+            if (sum == -1)
             {
                 return Content($"files: [{string.Join(",", Request.Form.Files.Select(f => f.Name))}]");
 

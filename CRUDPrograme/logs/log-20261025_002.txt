@@ -1,0 +1,70 @@
+2026-10-25 01:45:00.031 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-25 01:45:00.036 +08:00 [INF] Hosting environment: Development
+2026-10-25 01:45:00.037 +08:00 [INF] Content root path: E:\Work Place\ConfigurationEg\CRUDPrograme\CRUDPrograme
+2026-10-25 02:24:56.027 +08:00 [INF] User profile is available. Using 'C:\Users\zank\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-25 02:24:56.141 +08:00 [INF] Now listening on: http://localhost:4396
+2026-10-25 02:24:57.187 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-25 02:24:57.219 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-25 02:24:57.247 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-25 02:24:57.277 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-25 02:24:57.383 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-25 02:24:57.385 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-25 02:24:57.386 +08:00 [INF] 1.My-Custom-Value --------------ORDER XXX
+2026-10-25 02:24:57.387 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-25 02:24:57.388 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-25 02:24:57.391 +08:00 [INF] Executing StatusCodeResult, setting HTTP status code 401
+2026-10-25 02:24:57.394 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 113.139ms
+2026-10-25 02:24:57.395 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-25 02:24:57.397 +08:00 [INF] HTTP GET / responded 401 in 163.6565 ms
+2026-10-25 02:24:57.399 +08:00 [INF] Response:
+StatusCode: 401
+2026-10-25 02:24:57.404 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 401 null null 222.5036ms
+2026-10-25 02:25:02.852 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/country - null null
+2026-10-25 02:25:02.855 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /country
+2026-10-25 02:25:02.858 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 02:25:02.867 +08:00 [INF] Route matched with {action = "GetCountryName", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountryName() on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-25 02:25:02.876 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-25 02:25:02.877 +08:00 [INF] 2.My-Custom-Controller --------------ORDER XXX
+2026-10-25 02:25:02.877 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-25 02:25:02.879 +08:00 [INF] [Result Filter Begin]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 02:25:02.880 +08:00 [INF] Executing StatusCodeResult, setting HTTP status code 401
+2026-10-25 02:25:02.880 +08:00 [INF] [Result Filter End]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 02:25:02.881 +08:00 [INF] [Result Filter End]=====>TimeOut="00:00:00.0017246".StatusCode=401Type.Microsoft.AspNetCore.Mvc.UnauthorizedResult
+2026-10-25 02:25:02.883 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme) in 13.4812ms
+2026-10-25 02:25:02.883 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 02:25:02.884 +08:00 [INF] HTTP GET /country responded 401 in 28.1086 ms
+2026-10-25 02:25:02.885 +08:00 [INF] Response:
+StatusCode: 401
+2026-10-25 02:25:02.886 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/country - 401 null null 34.6706ms
+2026-10-25 02:25:11.730 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/country - null null
+2026-10-25 02:25:11.735 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /country
+2026-10-25 02:25:11.737 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 02:25:11.738 +08:00 [INF] Route matched with {action = "GetCountryName", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountryName() on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-25 02:25:11.743 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-25 02:25:11.744 +08:00 [INF] 2.My-Custom-Controller --------------ORDER XXX
+2026-10-25 02:25:11.745 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-25 02:25:11.746 +08:00 [INF] [Result Filter Begin]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 02:25:11.746 +08:00 [INF] Executing StatusCodeResult, setting HTTP status code 401
+2026-10-25 02:25:11.747 +08:00 [INF] [Result Filter End]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 02:25:11.748 +08:00 [INF] [Result Filter End]=====>TimeOut="00:00:00.0015945".StatusCode=401Type.Microsoft.AspNetCore.Mvc.UnauthorizedResult
+2026-10-25 02:25:11.749 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme) in 9.8503ms
+2026-10-25 02:25:11.750 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 02:25:11.750 +08:00 [INF] HTTP GET /country responded 401 in 14.0214 ms
+2026-10-25 02:25:11.751 +08:00 [INF] Response:
+StatusCode: 401
+2026-10-25 02:25:11.752 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/country - 401 null null 22.14ms

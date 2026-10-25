@@ -1,0 +1,70 @@
+2026-10-25 01:43:21.803 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-25 01:43:21.811 +08:00 [INF] Hosting environment: Development
+2026-10-25 01:43:21.812 +08:00 [INF] Content root path: E:\Work Place\ConfigurationEg\CRUDPrograme\CRUDPrograme
+2026-10-25 01:44:59.887 +08:00 [INF] User profile is available. Using 'C:\Users\zank\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-25 01:45:00.003 +08:00 [INF] Now listening on: http://localhost:4396
+2026-10-25 01:45:00.546 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-25 01:45:00.578 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-25 01:45:00.595 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-25 01:45:00.626 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-25 01:45:00.730 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-25 01:45:00.732 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-25 01:45:00.733 +08:00 [INF] 1.My-Custom-Value --------------ORDER XXX
+2026-10-25 01:45:00.734 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-25 01:45:00.734 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-25 01:45:00.738 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 108.4314ms
+2026-10-25 01:45:00.739 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-25 01:45:00.742 +08:00 [INF] HTTP GET / responded 200 in 160.4106 ms
+2026-10-25 01:45:00.745 +08:00 [INF] Response:
+StatusCode: 200
+2026-10-25 01:45:00.750 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 200 null null 209.2865ms
+2026-10-25 01:45:03.563 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-10-25 01:45:03.566 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /.well-known/appspecific/com.chrome.devtools.json
+2026-10-25 01:45:03.570 +08:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 2.6249 ms
+2026-10-25 01:45:03.571 +08:00 [INF] Response:
+StatusCode: 404
+2026-10-25 01:45:03.572 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 10.0378ms
+2026-10-25 01:45:03.576 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-10-25 01:45:07.044 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/country - null null
+2026-10-25 01:45:07.049 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /country
+2026-10-25 01:45:07.050 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 01:45:07.060 +08:00 [INF] Route matched with {action = "GetCountryName", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountryName() on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-25 01:45:07.067 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-25 01:45:07.068 +08:00 [INF] 2.My-Custom-Controller --------------ORDER XXX
+2026-10-25 01:45:07.069 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-25 01:45:07.071 +08:00 [INF] [Result Filter Begin]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 01:45:07.071 +08:00 [INF] [Result Filter End]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 01:45:07.075 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme) in 13.981ms
+2026-10-25 01:45:07.076 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 01:45:07.077 +08:00 [INF] HTTP GET /country responded 200 in 27.1769 ms
+2026-10-25 01:45:07.078 +08:00 [INF] Response:
+StatusCode: 200
+Last-Modified: 2026-10-25 01:45
+2026-10-25 01:45:07.078 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/country - 200 null null 34.0017ms
+2026-10-25 01:45:07.111 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-10-25 01:45:07.114 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /.well-known/appspecific/com.chrome.devtools.json
+2026-10-25 01:45:07.115 +08:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.2970 ms
+2026-10-25 01:45:07.117 +08:00 [INF] Response:
+StatusCode: 404
+2026-10-25 01:45:07.117 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 6.2003ms
+2026-10-25 01:45:07.121 +08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:4396/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404

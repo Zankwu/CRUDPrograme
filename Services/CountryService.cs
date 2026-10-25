@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
+using Repository;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using System.ComponentModel;
@@ -11,13 +12,18 @@ namespace Services
     public class CountryService : ICountryService
     {
 
-        private readonly ApplicationDbContext _db;
+        //private readonly ApplicationDbContext _db;
 
-        public CountryService(ApplicationDbContext db)
+        //public CountryService(ApplicationDbContext db)
+        //{
+        //    _db = db;
+        //}
+        private readonly ICountryRepository _cr;
+
+        public CountryService(ICountryRepository cr)
         {
-            _db = db;
+            _cr = cr;
         }
-
         public async Task<CountryResponse> AddCountry(CountryAddRequest? countryAddRequest)
         {
             if (countryAddRequest == null)
@@ -30,13 +36,14 @@ namespace Services
             }
             Country country = countryAddRequest.ToCountry();
             country.CountryId = Guid.NewGuid();
-
-            if (_db.Countries.Count(item => item.CountryName == country.CountryName)>0)
+            
+            if ((await _cr.GetAllCountires()).Where(item=>item.CountryName == country.CountryName).Count()>0)
             {
                 throw new ArgumentException(nameof(country));
             }
-            _db.Countries.Add(country);
-            await _db.SaveChangesAsync();
+            await _cr.AddCountry(country);
+            //_db.Countries.Add(country);
+
             return country.ToCountryResponse();
 
         }
@@ -45,9 +52,13 @@ namespace Services
 
         public async Task<List<CountryResponse>> GetAllCountries()
         {
+            List<Country> countries = await _cr.GetAllCountires();
+            if (countries == null)
+            {
+                throw new ArgumentNullException();
+            }
 
-
-            return await _db.Countries.Select(item=>item.ToCountryResponse()).ToListAsync();
+            return countries.Select(item=>item.ToCountryResponse()).ToList();
         }
 
         public async Task<CountryResponse> GetCountryByID(Guid guid)
@@ -56,7 +67,12 @@ namespace Services
             {
                 return null;
             }
-            Country countryBySelect = await _db.Countries.Where(item => item.CountryId == guid).FirstAsync();
+            List<Country> countries = await _cr.GetAllCountires();
+            Country? countryBySelect = countries.FirstOrDefault(item => item.CountryId == guid);
+            if (countryBySelect == null)
+            {
+                throw new Exception("the country is invalid");
+            }
             CountryResponse countryResponseBySelect = countryBySelect.ToCountryResponse();
             return countryResponseBySelect;
         }
@@ -70,6 +86,9 @@ namespace Services
             MemoryStream memoryStream = new MemoryStream();
             await formFile.CopyToAsync(memoryStream);
             memoryStream.Position = 0;
+
+            List<Country> countries = await _cr.GetAllCountires();
+
             using (ExcelPackage excelPackage = new ExcelPackage(memoryStream))
             {
                 ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets[0];
@@ -77,19 +96,17 @@ namespace Services
                 for (int row = 1; row <= rows; row++)
                 {
                     string? countryName = Convert.ToString(worksheet.Cells[row, 1].Value);
-                    if (!string.IsNullOrEmpty(countryName) && _db.Countries.Where(item=>item.CountryName == countryName).Count()==0)
+                    if (!string.IsNullOrEmpty(countryName) && countries.Where(item=>item.CountryName == countryName).Count()==0)
                     {
                         CountryAddRequest countryAddRequest = new CountryAddRequest()
                         {
                             CountryName = countryName,
                         };
-                        _db.Countries.Add(countryAddRequest.ToCountry());
+                        await _cr.AddCountry(countryAddRequest.ToCountry());
                         sum++;
                     }
                 }
             }
-            _db.SaveChanges();
-
             return sum;
         }
     }

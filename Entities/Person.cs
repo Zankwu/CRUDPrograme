@@ -32,6 +32,10 @@ namespace Entities
 
         public virtual Country? Country { get; set; }
 
+        public override string ToString()
+        {
+            return PersonName;
+        }
     }
 
 

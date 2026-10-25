@@ -1,0 +1,89 @@
+2026-10-25 02:25:48.536 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-25 02:25:48.542 +08:00 [INF] Hosting environment: Development
+2026-10-25 02:25:48.543 +08:00 [INF] Content root path: E:\Work Place\ConfigurationEg\CRUDPrograme\CRUDPrograme
+2026-10-25 02:29:16.222 +08:00 [INF] User profile is available. Using 'C:\Users\zank\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-25 02:29:16.363 +08:00 [INF] Now listening on: http://localhost:4396
+2026-10-25 02:29:16.396 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-25 02:29:16.397 +08:00 [INF] Hosting environment: Development
+2026-10-25 02:29:16.397 +08:00 [INF] Content root path: E:\Work Place\ConfigurationEg\CRUDPrograme\CRUDPrograme
+2026-10-25 02:29:17.122 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-25 02:29:17.159 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-25 02:29:17.179 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-25 02:29:17.227 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-25 02:29:17.343 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-25 02:29:17.344 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-25 02:29:17.345 +08:00 [INF] 1.My-Custom-Value --------------ORDER XXX
+2026-10-25 02:29:17.346 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-25 02:29:17.347 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-25 02:29:17.350 +08:00 [INF] Executing StatusCodeResult, setting HTTP status code 401
+2026-10-25 02:29:17.354 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 122.3672ms
+2026-10-25 02:29:17.355 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-25 02:29:17.357 +08:00 [INF] HTTP GET / responded 401 in 195.0559 ms
+2026-10-25 02:29:17.359 +08:00 [INF] Response:
+StatusCode: 401
+2026-10-25 02:29:17.364 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 401 null null 249.8755ms
+2026-10-25 02:29:20.313 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/country - null null
+2026-10-25 02:29:20.317 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /country
+2026-10-25 02:29:20.320 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 02:29:20.328 +08:00 [INF] Route matched with {action = "GetCountryName", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountryName() on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-25 02:29:20.337 +08:00 [INF] [PersonService]method in GetAllPerson
+2026-10-25 02:29:20.340 +08:00 [INF] [PersonRepository]method in repository
+2026-10-25 02:29:21.033 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/country - null null
+2026-10-25 02:29:21.037 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /country
+2026-10-25 02:29:21.038 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 02:29:21.039 +08:00 [INF] Route matched with {action = "GetCountryName", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCountryName() on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-25 02:29:21.046 +08:00 [INF] [PersonService]method in GetAllPerson
+2026-10-25 02:29:21.047 +08:00 [INF] [PersonRepository]method in repository
+2026-10-25 02:29:22.258 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[Age], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [c].[CountryId], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryId]
+2026-10-25 02:29:22.258 +08:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[Age], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [c].[CountryId], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryId]
+2026-10-25 02:29:22.359 +08:00 [INF] Time for GetAllPersons from Database completed in 1311.2 ms
+2026-10-25 02:29:22.359 +08:00 [INF] Time for GetAllPersons from Database completed in 2019.3 ms
+2026-10-25 02:29:22.368 +08:00 [INF] [Result Filter Begin]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 02:29:22.368 +08:00 [INF] [Result Filter Begin]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 02:29:22.370 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2026-10-25 02:29:22.370 +08:00 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2026-10-25 02:29:22.378 +08:00 [INF] [Result Filter End]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 02:29:22.378 +08:00 [INF] [Result Filter End]=====>PersonsListResultFilter.OnResultExecutionAsync
+2026-10-25 02:29:22.380 +08:00 [INF] [Result Filter End]=====>TimeOut="00:00:00.0106830".StatusCode=200Type.Microsoft.AspNetCore.Mvc.ContentResult
+2026-10-25 02:29:22.380 +08:00 [INF] [Result Filter End]=====>TimeOut="00:00:00.0108594".StatusCode=200Type.Microsoft.AspNetCore.Mvc.ContentResult
+2026-10-25 02:29:22.383 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme) in 1341.7304ms
+2026-10-25 02:29:22.383 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme) in 2053.731ms
+2026-10-25 02:29:22.385 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 02:29:22.385 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.GetCountryName (CRUDPrograme)'
+2026-10-25 02:29:22.387 +08:00 [INF] HTTP GET /country responded 200 in 2068.6173 ms
+2026-10-25 02:29:22.387 +08:00 [INF] HTTP GET /country responded 200 in 1349.0920 ms
+2026-10-25 02:29:22.389 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 24 Oct 2026 18:29:21 GMT
+Server: Kestrel
+Content-Length: 110
+2026-10-25 02:29:22.389 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 24 Oct 2026 18:29:21 GMT
+Server: Kestrel
+Content-Length: 110
+2026-10-25 02:29:22.398 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/country - 200 110 text/plain; charset=utf-8 1364.9755ms
+2026-10-25 02:29:22.398 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/country - 200 110 text/plain; charset=utf-8 2084.9424ms

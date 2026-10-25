@@ -2,6 +2,8 @@
   <Project Path="CRUDPrograme/CRUDPrograme.csproj" />
   <Project Path="CRUDTests/CRUDTests.csproj" />
   <Project Path="Entities/Entities.csproj" />
+  <Project Path="Repository/RepositoryContracts.csproj" Id="89b8f4c1-9d9a-456c-b5b8-6f393411777a" />
+  <Project Path="RepositoryImpl/RepositoryImpl.csproj" Id="82467efd-8ae6-41be-b92b-ba0b5af04f00" />
   <Project Path="ServiceContracts/ServiceContracts.csproj" />
   <Project Path="Services/Services.csproj" Id="686a2719-7db1-4950-b50b-91cd88471b88" />
 </Solution>

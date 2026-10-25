@@ -1,0 +1,45 @@
+2026-10-24 19:41:47.505 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-24 19:41:47.510 +08:00 [INF] Hosting environment: Development
+2026-10-24 19:41:47.511 +08:00 [INF] Content root path: E:\Work Place\ConfigurationEg\CRUDPrograme\CRUDPrograme
+2026-10-24 19:42:37.087 +08:00 [INF] User profile is available. Using 'C:\Users\zank\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-24 19:42:37.219 +08:00 [INF] Now listening on: http://localhost:4396
+2026-10-24 19:42:38.148 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-24 19:42:38.183 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-24 19:42:38.211 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 19:42:38.243 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-24 19:42:38.353 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-24 19:42:38.357 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-24 19:42:38.358 +08:00 [INF] 1.My-Custom-Value --------------ORDER XXX
+2026-10-24 19:42:38.359 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-24 19:42:38.360 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-24 19:42:38.364 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 116.0419ms
+2026-10-24 19:42:38.365 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 19:42:38.367 +08:00 [INF] HTTP GET / responded 200 in 170.7162 ms
+2026-10-24 19:42:38.369 +08:00 [INF] Response:
+StatusCode: 200
+2026-10-24 19:42:38.375 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 200 null null 232.7145ms
+2026-10-24 19:42:46.685 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:4396/ - null null
+2026-10-24 19:42:46.689 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-10-24 19:42:46.690 +08:00 [INF] Executing endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 19:42:46.690 +08:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String) on controller CRUDPrograme.Controllers.HomeController (CRUDPrograme).
+2026-10-24 19:42:46.698 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuting is down
+2026-10-24 19:42:46.699 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth OK? method
+2026-10-24 19:42:46.700 +08:00 [INF] 1.My-Custom-Value --------------ORDER XXX
+2026-10-24 19:42:46.701 +08:00 [INF] ResponseHeaderAsyncActionFilter.OnActionExecutionAsyncAuth GG method
+2026-10-24 19:42:46.702 +08:00 [INF] [Action]--PersonActionFilter.OnActionExecuted is run
+2026-10-24 19:42:46.703 +08:00 [INF] Executed action CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme) in 11.5118ms
+2026-10-24 19:42:46.704 +08:00 [INF] Executed endpoint 'CRUDPrograme.Controllers.HomeController.Index (CRUDPrograme)'
+2026-10-24 19:42:46.705 +08:00 [INF] HTTP GET / responded 200 in 15.6014 ms
+2026-10-24 19:42:46.706 +08:00 [INF] Response:
+StatusCode: 200
+2026-10-24 19:42:46.707 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:4396/ - 200 null null 22.9184ms
